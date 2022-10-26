@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Stopwatch with JS</title>
+<style>
+    body{
+        background-image: linear-gradient(to right, navy, green);
+    }
+
+    .MyDiv{
+        margin-bottom:50%;
+        width:80%;
+        background-color:black;
+        color:white;
+        padding:25px;
+        border-radius: 25px;
+    }
+</style>
+<script>
+    window.onload = function () {
+  var sec = 00; 
+  var tensec = 00; 
+  var tensecappend = document.getElementById("tensec")
+  var secappend = document.getElementById("sec")
+  var start = document.getElementById('start');
+  var stop = document.getElementById('stop');
+  var reset = document.getElementById('reset');
+  var gap ;
+  start.onclick = function() {
+    clearInterval(gap);
+     gap = setInterval(begin, 10);
+  }
+    stop.onclick = function() {
+       clearInterval(gap);
+  }
+  reset.onclick = function() {
+     clearInterval(gap);
+    tensec = "00";
+  	sec = "00";
+    tensecappend.innerHTML = tensec;
+  	secappend.innerHTML = sec;
+  }
+  
+  function begin () {
+    tensec++; 
+    if(tensec <= 9){
+      tensecappend.innerHTML = "0" + tensec;
+    }
+    
+    if (tensec > 9){
+      tensecappend.innerHTML = tensec;
+    } 
+    if (tensec > 99) {
+      console.log("seconds");
+      sec++;
+      secappend.innerHTML = "0" + sec
+      tensec = 0;
+      tensecappend.innerHTML = "0" + 0;
+    }
+    if (sec > 9){
+      secappend.innerHTML = sec;
+    } 
+  }
+}
+</script>
+</head>
+<body>
+    <center><div class="MyDiv"><h1 style="color:yellow; font-size:60px;"> Javascript Stopwatch</h1>
+<h2><span id="sec">00</span>:<span id="tensec">00</span></h2>
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+<button id="reset">Reset</button>
+</div></center>
+</body>
+</html>
