@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body{
+            background-image: linear-gradient(to right, navy, royalblue);
+            color: white;
+        }
+
+        .MyDiv{
+            align-items: center;
+            justify-content: center;
+            width:80%;
+            height: 300px;
+            background-color: black;
+        }
+        .MyDiv2{
+            align-items: center;
+            justify-content: center;
+            width:80%;
+            height: 300px;
+            background-color: white;
+            color:black;
+        }
+
+        #demotext{
+            padding: 50px;
+        }
+        #demotext2{
+            padding: 50px;
+        }
+    </style>
+<script>
+    function changetext() {
+    document.getElementById("demotext").innerHTML = "You have clicked the button!";
+    }
+
+    function date() {
+        document.getElementById('demotext2').innerHTML = Date();
+    }
+</script>
+</head>
+<body>
+   <center><div class="MyDiv">
+        <p id="demotext">Hello Everyone</p>
+        <button onclick="changetext()">Click Me to Change the above Text</button></div>
+    </center>
+    <center><div class="MyDiv2">
+        <p id="demotext2">Clik the button to display date over here</p>
+        <button onclick="date()">Click Me to display date</button></div>
+    </center>
+</body>
+</html>
