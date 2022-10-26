@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styles controlled with Javascript</title>
+    <style>
+        body{
+            background-image: linear-gradient(to right, magenta, navy);
+        }
+
+        .MyDiv{
+            width:80%;
+            height:300px;
+            background-color: azure;
+        }
+
+        #heading{color:red}
+
+        #d{background-color: lightgrey; color:black; padding: 25px;}
+        #l{background-color: navy; color:white; padding:25px;}
+    </style>
+<script>
+    //when Dark color button is clicked
+    function darkcolor() {
+        //Changing the DIV elements according to theme
+        document.getElementById("MyDiv").style.color = "white";
+        document.getElementById("MyDiv").style.backgroundColor = "black";
+        document.getElementById("heading").style.color = "yellow";
+
+        //Changing dark color button to blue to show that it is selected
+        document.getElementById("d").style.backgroundColor = "navy";
+        document.getElementById("d").style.color = "white";
+
+        //Changing Light button color to grey to show it is unselected
+        document.getElementById("l").style.backgroundColor = "lightgrey";
+        document.getElementById("l").style.color = "black";
+    }
+
+    //when Light color button is clicked
+    function lightcolor() {
+        //Changing the DIV elements according to theme
+        document.getElementById("MyDiv").style.color = "black";
+        document.getElementById("MyDiv").style.backgroundColor = "azure";
+        document.getElementById("heading").style.color = "red";
+
+        //Changing light color button to blue to show that it is selected
+        document.getElementById("l").style.backgroundColor = "navy";
+        document.getElementById("l").style.color = "white";
+
+        //Changing Dark button color to grey to show it is unselected
+        document.getElementById("d").style.backgroundColor = "lightgrey";
+        document.getElementById("d").style.color = "black";
+    }
+</script>
+</head>
+<body>
+    <center>
+        <div id="MyDiv" class="MyDiv">
+            <h2 id="heading">Controlling Styles with JS</h2>
+            <button id="d" onclick="darkcolor()">Dark Theme</button>
+            <button id="l" onclick="lightcolor()">Light Theme</button>
+            <p id="text">Lorem Ispum Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        </div>
+    </center>
+</body>
+</html>
